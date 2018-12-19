@@ -175,6 +175,12 @@ public abstract class ClassUtils {
 	 * @see Thread#getContextClassLoader()
 	 * @see ClassLoader#getSystemClassLoader()
 	 */
+	/**
+	 * 1，首先获取线程上下文类加载器作为默认的类加载器
+	 * 2，若没能获取到线程上下文类加载器，则获取ClassUtils的类加载器
+	 * 3，若没能获取ClassUtils的类加载器，则获取应用类加载器ClassLoader.getSystemClassLoader();
+	 * @return
+	 */
 	@Nullable
 	public static ClassLoader getDefaultClassLoader() {
 		ClassLoader cl = null;

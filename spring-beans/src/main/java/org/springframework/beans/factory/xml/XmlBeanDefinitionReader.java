@@ -300,7 +300,14 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 	 * @throws BeanDefinitionStoreException in case of loading or parsing errors
 	 */
 	@Override
+	//从XML文件中加载bean definition
 	public int loadBeanDefinitions(Resource resource) throws BeanDefinitionStoreException {
+		/*
+		new EncodedResource(resource)代码逻辑：
+		1，新建一个EncodeResource对象
+		2，将resource对象赋值给EncodeResource的resource属性
+		3，给EncodeResource的编码和字符集赋值为Null
+		 */
 		return loadBeanDefinitions(new EncodedResource(resource));
 	}
 
@@ -311,6 +318,7 @@ public class XmlBeanDefinitionReader extends AbstractBeanDefinitionReader {
 	 * @return the number of bean definitions found
 	 * @throws BeanDefinitionStoreException in case of loading or parsing errors
 	 */
+	//从指定的XML文件中加载bean definition
 	public int loadBeanDefinitions(EncodedResource encodedResource) throws BeanDefinitionStoreException {
 		Assert.notNull(encodedResource, "EncodedResource must not be null");
 		if (logger.isTraceEnabled()) {

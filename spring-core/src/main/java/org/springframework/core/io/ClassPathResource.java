@@ -75,6 +75,11 @@ public class ClassPathResource extends AbstractFileResolvingResource {
 	 * or {@code null} for the thread context class loader
 	 * @see ClassLoader#getResourceAsStream(String)
 	 */
+	/**
+	 * 新建ClassPathResource对象时给thix.path和this.classLoader对象赋值。
+	 * @param path
+	 * @param classLoader
+	 */
 	public ClassPathResource(String path, @Nullable ClassLoader classLoader) {
 		Assert.notNull(path, "Path must not be null");
 		String pathToUse = StringUtils.cleanPath(path);

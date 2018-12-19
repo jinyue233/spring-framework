@@ -7,6 +7,9 @@ public class MyBeanTest {
 	@SuppressWarnings("deprecation")
 	@Test
 	public void testSimpleLoad() {
+		/**
+			1,首先构造ClassPathResource对象，以便以后用Resource接口定义的各种方法来操纵资源
+		 */
 		XmlBeanFactory xmlBeanFactory = new XmlBeanFactory(new ClassPathResource("beans.xml"));
 		MyBean myBean = (MyBean)xmlBeanFactory.getBean("myBean");
 		System.out.println(myBean.getName());

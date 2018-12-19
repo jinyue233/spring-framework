@@ -58,6 +58,7 @@ public class EncodedResource implements InputStreamSource {
 	 * not specifying an explicit encoding or {@code Charset}.
 	 * @param resource the {@code Resource} to hold (never {@code null})
 	 */
+	//在没有指定编码的情况下为resource创建一个EncodeResource对象
 	public EncodedResource(Resource resource) {
 		this(resource, null, null);
 	}
@@ -86,8 +87,8 @@ public class EncodedResource implements InputStreamSource {
 		super();
 		Assert.notNull(resource, "Resource must not be null");
 		this.resource = resource;
-		this.encoding = encoding;
-		this.charset = charset;
+		this.encoding = encoding;//一般为null
+		this.charset = charset;//一般为null
 	}
 
 
